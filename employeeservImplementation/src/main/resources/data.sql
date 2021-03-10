@@ -1,0 +1,30 @@
+DROP TABLE IF EXISTS CITY;  
+
+CREATE TABLE CITY (  
+City_code INT AUTO_INCREMENT  PRIMARY KEY,  
+city_name VARCHAR(50) NOT NULL,  
+city_pincode INT(8) NOT NULL,  
+);  
+
+CREATE TABLE address (  
+id INT AUTO_INCREMENT  PRIMARY KEY,  
+line1 VARCHAR(50) NOT NULL, 
+line2 VARCHAR(50) ,  
+city VARCHAR(50) NOT NULL,  
+state VARCHAR(50) NOT NULL,  
+country VARCHAR(50) NOT NULL,
+zipCode VARCHAR(50) NOT NULL  
+);  
+ 
+
+CREATE TABLE employee (  
+id INT AUTO_INCREMENT  PRIMARY KEY,  
+first_name VARCHAR(50) NOT NULL,  
+last_name VARCHAR(50) NOT NULL, 
+address_id INT NULL_TO_DEFAULT,
+
+FOREIGN KEY (address_id) REFERENCES address(id)
+
+); 
+
+
